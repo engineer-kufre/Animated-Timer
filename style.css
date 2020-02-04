@@ -9,7 +9,7 @@
 }
 .base-timer__path-elapsed {
     stroke-width: 7px;
-    stroke: grey;
+    stroke: rgb(180, 176, 176);
 }
 .base-timer__label {
     position: absolute;
