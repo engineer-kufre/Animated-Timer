@@ -15,7 +15,7 @@ function formatTimeLeft() {
     
 }
 
-const TIME_LIMIT = 62; //set timer duration
+const TIME_LIMIT = 22; //set timer duration
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 formatTimeLeft();
@@ -28,8 +28,10 @@ function startTimer() {
         timePassed++;
         timeLeft = TIME_LIMIT - timePassed;
         timer_span.innerHTML = formatTimeLeft(timeLeft);
+        if (timeLeft > 0) {
+            setCircleDasharray();
+        }
         setRemainingPathColor();
-        setCircleDasharray();
     }, 1000);
 }
 startTimer(); //ignition
@@ -58,7 +60,9 @@ const ALERT_THRESHOLD = TIME_LIMIT / 4;
 
 //add and remove classes to change path color
 function setRemainingPathColor() {
-    if (timeLeft <= ALERT_THRESHOLD) {
+    if (timeLeft === 0) {
+        progress_path.classList.remove('alert');
+    } else if (timeLeft <= ALERT_THRESHOLD) {
         progress_path.classList.remove('warning');
         progress_path.classList.add('alert');
     } else if (timeLeft <= WARNING_THRESHOLD) {
