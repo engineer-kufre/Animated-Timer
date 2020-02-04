@@ -25,6 +25,12 @@
 .info {
     color: green;
 }
+.warning {
+    color: orange;
+}
+.alert {
+    color: red;
+}
 
 .base-timer__path-remaining {
     stroke-width: 7px;
