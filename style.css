@@ -1,0 +1,13 @@
+.base-timer {
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+}
